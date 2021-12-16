@@ -16,11 +16,15 @@
  9. Free Ports "8xGPIO" "1xi2c" "1xUART" "External port for DS18B20 TMP Sensor"
  
  
+ ![ExpBoard](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/ExpBoard.JPG)
+ 
+ 
  Expansion Board
- 1. 8x Outputs "SN74HC595" shift register https://esphome.io/components/sn74hc595.html?highlight=sn74hc595
+ 1. 1x JST 8pin Outputs "SN74HC595" shift register https://esphome.io/components/sn74hc595.html?highlight=sn74hc595
  2. 2x JST 4pin i2c
- 3. 1x JST 4pin UART
+ 3. 1x Pin Header 3pin UART
  4. 4x JST 4pin Free GPIOs
+ 5. 1x JST 3pin for DS18B20 TMP Sensors
  
  
 
