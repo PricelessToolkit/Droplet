@@ -7,7 +7,7 @@
  ![DROPLET](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/droplet.jpg)
  
 
- 1. 5x Micro Pumps
+ 1. 5x Micro Pump outputs
  2. 5x Soil Moisture sensor inputs
  3. Onboard Temperature sensor "DS18B20" https://esphome.io/components/sensor/dallas.html
  4. Onboard Buzzer "Buzzer port can be free up with jumper" https://esphome.io/components/rtttl.html?highlight=buzzer
