@@ -23,7 +23,7 @@
  ![ExpBoard](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/ExpBoard.JPG)
  
  
- 1. 1x JST 8pin Outputs "SN74HC595" shift register https://esphome.io/components/sn74hc595.html?highlight=sn74hc595
+ 1. 1x JST 10pin Outputs for 8 Relays "SN74HC595" shift register https://esphome.io/components/sn74hc595.html?highlight=sn74hc595
  2. 2x JST 4pin i2c
  3. 1x Pin Header 3pin UART
  4. 4x JST 4pin Free GPIOs
