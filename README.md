@@ -2,7 +2,9 @@
  ALL-IN-ONE Plants growing and monitoring system for ESPHome and Home Assistant.
  
  
- Main Board
+ ![DROPLET](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/droplet.jpg)
+ 
+  Main Board
  1. 5 Micro Pumps
  2. 5 Soil Moisture sensors 
  3. Onboard Temperature sensor "DS18B20" https://esphome.io/components/sensor/dallas.html
@@ -28,10 +30,6 @@
  1x BMP280 Temperature and Pressure
  1x VL53L0x Distance Sensor
  1x DHT Temperature and Humidity
- 
- 
- 
- ![DROPLET](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/droplet.jpg)
  
  
  ![HA](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/HASensors.JPG)
