@@ -8,7 +8,7 @@
  
 
  1. 5x Micro Pumps
- 2. 5x Soil Moisture sensors 
+ 2. 5x Soil Moisture sensor inputs
  3. Onboard Temperature sensor "DS18B20" https://esphome.io/components/sensor/dallas.html
  4. Onboard Buzzer "Buzzer port can be free up with jumper" https://esphome.io/components/rtttl.html?highlight=buzzer
  5. Breakout pins for connecting "i2c OLED Display" https://esphome.io/components/display/ssd1306.html?highlight=display
