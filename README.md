@@ -1,10 +1,12 @@
 # Droplet
  ALL-IN-ONE Plants growing and monitoring system for ESPHome and Home Assistant.
  
- 
+   Main Board
+   
+   
  ![DROPLET](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/droplet.jpg)
  
-  Main Board
+
  1. 5 Micro Pumps
  2. 5 Soil Moisture sensors 
  3. Onboard Temperature sensor "DS18B20" https://esphome.io/components/sensor/dallas.html
@@ -15,11 +17,12 @@
  8. All pumps outputs and moisture sensor inputs have fuses
  9. Free Ports "8xGPIO" "1xi2c" "1xUART" "External port for DS18B20 TMP Sensor"
  
- 
+  Expansion Board
+  
+  
  ![ExpBoard](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/ExpBoard.JPG)
  
  
- Expansion Board
  1. 1x JST 8pin Outputs "SN74HC595" shift register https://esphome.io/components/sn74hc595.html?highlight=sn74hc595
  2. 2x JST 4pin i2c
  3. 1x Pin Header 3pin UART
