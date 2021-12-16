@@ -25,9 +25,10 @@
  
  1. 1x JST 10pin Outputs for 8 Relays "SN74HC595" shift register https://esphome.io/components/sn74hc595.html?highlight=sn74hc595
  2. 2x JST 4pin i2c
- 3. 1x Pin Header 3pin UART
+ 3. 1x Pin Header TX and RX
  4. 4x JST 4pin Free GPIOs
  5. 1x JST 3pin for DS18B20 TMP Sensors
+ 6. 1x 1pin Header GPIO23 for buzzer "Buzzer port can be free up with jumper"
  
  
 
