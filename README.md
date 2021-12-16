@@ -25,11 +25,15 @@
  
 
  What sensors does it support ? "All sensors supported by ESPHome" https://esphome.io/index.html
- I connected and tested at the same time
- 2x "DS18B20" Temperature
- 1x BMP280 Temperature and Pressure
- 1x VL53L0x Distance Sensor
- 1x DHT Temperature and Humidity
+ 
+ 
+ I connected and tested at the same time.
+ 5x Moisture Sensor V2, 
+ 2x "DS18B20" Temperature, 
+ 1x BMP280 Temperature and Pressure, 
+ 1x VL53L0x Distance Sensor, 
+ 1x DHT Temperature and Humidity, 
+ 4x Relays. 
  
  
  ![HA](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/HASensors.JPG)
