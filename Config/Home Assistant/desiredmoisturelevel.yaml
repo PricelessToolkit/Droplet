@@ -1,0 +1,40 @@
+input_number:
+  moisture_level_for_pump1:
+    name: Desired Moisture level 1
+    unit_of_measurement: "%"
+    min: 0
+    max: 90
+    step: 1
+    mode: box
+    
+  moisture_level_for_pump2:
+    name: Desired Moisture level 2
+    unit_of_measurement: "%"
+    min: 0
+    max: 90
+    step: 1
+    mode: box
+
+  moisture_level_for_pump3:
+    name: Desired Moisture level 3
+    unit_of_measurement: "%"
+    min: 0
+    max: 90
+    step: 1
+    mode: box
+
+  moisture_level_for_pump4:
+    name: Desired Moisture level 4
+    unit_of_measurement: "%"
+    min: 0
+    max: 90
+    step: 1
+    mode: box
+
+  moisture_level_for_pump5:
+    name: Desired Moisture level 5
+    unit_of_measurement: "%"
+    min: 0
+    max: 90
+    step: 1
+    mode: box
