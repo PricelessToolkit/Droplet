@@ -7,13 +7,13 @@
  ![DROPLET](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/droplet.jpg)
  
 
- 1. 5 Micro Pumps
- 2. 5 Soil Moisture sensors 
+ 1. 5x Micro Pumps
+ 2. 5x Soil Moisture sensors 
  3. Onboard Temperature sensor "DS18B20" https://esphome.io/components/sensor/dallas.html
  4. Onboard Buzzer "Buzzer port can be free up with jumper" https://esphome.io/components/rtttl.html?highlight=buzzer
  5. Breakout pins for connecting "i2c OLED Display" https://esphome.io/components/display/ssd1306.html?highlight=display
- 6. 5 Buttons for manual Pumps controll
- 7. 1 Button "Short press" for wake-up Oled "Long press" for general purpose. "2x Binary sensors available for HA"
+ 6. 5x Buttons for manual Pumps controll
+ 7. 1x Button "Short press" for wake-up Oled "Long press" for general purpose. "2x Binary sensors available for HA"
  8. All pumps outputs and moisture sensor inputs have fuses
  9. Free Ports "8xGPIO" "1xi2c" "1xUART" "External port for DS18B20 TMP Sensor"
  
