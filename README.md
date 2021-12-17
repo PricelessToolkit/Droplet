@@ -15,7 +15,7 @@
  6. 5x Buttons for manual Pumps controll
  7. 1x Button "Short press" for wake-up Oled "Long press" for general purpose. "2x Binary sensors available for HA"
  8. All pumps outputs and moisture sensor inputs have fuses
- 9. Pins Which can be used "GPIO19,5,26,2,15,27,14,12" and "1xi2c GPIO21,22" "1xUART" "GPIO25 External port for DS18B20 TMP Sensor!!"
+ 9. Pins Which can be used "GPIO 19,5,26,2,15,27,14,12" and "1xi2c GPIO 21,22" "1xUART" "GPIO25 External port for DS18B20 TMP Sensor!!"
  
   Expansion Board
   
@@ -24,10 +24,10 @@
  
  
  1. 1x JST 10pin Outputs for 8 Relays "SN74HC595" shift register used GPIO pns "19, 26, 2, 27" https://esphome.io/components/sn74hc595.html?highlight=sn74hc595
- 2. 2x JST 4pin i2c (V, GPIO21, GPIO22 GND)
+ 2. 2x JST 4pin i2c (V, GPIO 21, GPIO 22 GND)
  3. 1x 2 Pin Header TX and RX
- 4. 4x JST 4pin (V, GPIO5, GND)  (V, GPIO15, GND)  (V GPIO14, GND)  (V, GPIO12, GND)
- 5. 1x JST 3pin for "DS18B20 TMP Sensors" (3.3v, GPIO25, GND)
+ 4. 4x JST 4pin (GPIO5, V, GND)  (GPIO 15, V, GND)  (V GPIO 14, V GND)  (GPIO 12, V, GND)
+ 5. 1x JST 3pin for "DS18B20 TMP Sensors" (3.3v, GPIO 25, GND)
  6. 1x 1pin Header GPIO23 connected to buzzer. Buzzer port can be free up, "remove jumper JP"
  
  
