@@ -1,5 +1,5 @@
 # Droplet
- ALL-IN-ONE Plants growing and monitoring system for ESPHome and Home Assistant.
+ ALL-IN-ONE Plants watering and monitoring system for ESPHome and Home Assistant.
  
    Main Board
    
