@@ -7,18 +7,18 @@ esphome:
     then:
       - lambda: id(oled).turn_off();
 
+
 # Enable logging
 logger:
 
 
 
 ota:
-  password: "bfeaaa234d4fea57e1b5d3b985cfe06c"
+  password: "bfec11234d4fea57e1b5d3b985cfe06c"
 
 wifi:
   ssid: "YOUR_WIFI"
   password: "YOUR_PASSWORD"
-  #domain: .lab.lan
   fast_connect: on
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
@@ -28,12 +28,12 @@ wifi:
 
 captive_portal:
 
-dallas:
+dallas:  # Integrated Temperature Sensor. https://esphome.io/components/sensor/dallas.html
   - pin: 25
     update_interval: 5s
 
 
-sn74hc595:
+sn74hc595: # For Expansion board.  Uncomment when using expansion board https://esphome.io/components/sn74hc595.html?highlight=sn74hc595
   - id: 'sn74hc595_hub'
     data_pin: 19
     clock_pin: 27
@@ -42,12 +42,12 @@ sn74hc595:
     sr_count: 1
 
 
-i2c:
+i2c: # Oled Display and sensor i2c Pins
   sda: 21
   scl: 22
   scan: true
 
-font:
+font: # Fonts for Display
   - file: 'arial.ttf'
     id: font1
     size: 8
@@ -58,11 +58,11 @@ font:
     id: font3
     size: 14
 
-display:
+display: # More info https://esphome.io/components/display/ssd1306.html?highlight=1306
   - platform: ssd1306_i2c
     id: oled
     model: "SSD1306 128x64"
-    address: 0x3C
+    address: 0x3C # Oled Display Address
     lambda: |-
       it.printf(2, 0, id(font2), TextAlign::TOP_LEFT, "DROPLET");
       it.printf(61, 0, id(font2) ,"%.1f", id(dbm).state);
@@ -79,7 +79,7 @@ display:
 
 
 
-  # BUZZER #
+  # Integrated BUZZER # If you using pin23 for something else, delete this and remove jumper 1
 rtttl:
   output: rtttl_out
   on_finished_playback:
@@ -100,7 +100,7 @@ api:
 
 sensor:
 
-  # MOISTUR LEVEL SENSORS #
+  # MOISTUR LEVEL SENSORS #   https://esphome.io/components/sensor/adc.html?highlight=adc
   - platform: adc
     pin: 34
     id: "Soil1"
@@ -111,8 +111,8 @@ sensor:
     attenuation: 11db
     filters:
     - calibrate_linear:
-        - 2.520 -> 0.00  # Calibrate Min
-        - 0.99 -> 100.00 # Calibrate MAX
+        - 2.520 -> 0.00  # Calibrate Min in dry soil
+        - 0.99 -> 100.00 # Calibrate MAX in 100% wet soil 
     - lambda: |
         if (x < 0) return 0; 
         else if (x > 100) return 100;
@@ -129,8 +129,8 @@ sensor:
     attenuation: 11db
     filters:
     - calibrate_linear:
-        - 2.520 -> 0.00  # Calibrate Min
-        - 0.99 -> 100.00 # Calibrate MAX
+        - 2.520 -> 0.00  # Calibrate Min in dry soil
+        - 0.99 -> 100.00 # Calibrate MAX in 100% wet soil 
     - lambda: |
         if (x < 0) return 0; 
         else if (x > 100) return 100;
@@ -147,8 +147,8 @@ sensor:
     attenuation: 11db
     filters:
     - calibrate_linear:
-        - 2.520 -> 0.00  # Calibrate Min
-        - 0.99 -> 100.00 # Calibrate MAX
+        - 2.520 -> 0.00  # Calibrate Min in dry soil
+        - 0.99 -> 100.00 # Calibrate MAX in 100% wet soil 
     - lambda: |
         if (x < 0) return 0;
         else if (x > 100) return 100;
@@ -165,8 +165,8 @@ sensor:
     attenuation: 11db
     filters:
     - calibrate_linear:
-        - 2.520 -> 0.00  # Calibrate Min
-        - 0.99 -> 100.00 # Calibrate MAX
+        - 2.520 -> 0.00  # Calibrate Min in dry soil
+        - 0.99 -> 100.00 # Calibrate MAX in 100% wet soil 
     - lambda: |
         if (x < 0) return 0;
         else if (x > 100) return 100;
@@ -183,8 +183,8 @@ sensor:
     attenuation: 11db
     filters:
     - calibrate_linear:
-        - 2.520 -> 0.00  # Calibrate Min
-        - 0.99 -> 100.00 # Calibrate MAX
+        - 2.520 -> 0.00  # Calibrate Min in dry soil
+        - 0.99 -> 100.00 # Calibrate MAX in 100% wet soil 
     - lambda: |
         if (x < 0) return 0;
         else if (x > 100) return 100;
@@ -193,7 +193,7 @@ sensor:
 
 
 
-  # HOME ASSISTANT DESIRED MOISTURE LEVELS #
+  # HOME ASSISTANT DESIRED MOISTURE LEVELS #  https://esphome.io/components/sensor/homeassistant.html
   - platform: homeassistant
     name: "Desired Moisture level 1"
     id: "desired_mois_value_1"
@@ -227,7 +227,7 @@ sensor:
 
 
 
-  # KEEPS MOISTURE LEVEL # Comment out or delete these 5 sensors "Comparison Sens 1,2,3,4,5" if you want to automize the Moisture level with Home Assistant "Automation".
+  # KEEPS MOISTURE LEVEL # Comment out or delete these 5 sensors "Comparison Sens 1,2,3,4,5" if you want to automate the Soil Moisture level with Home Assistant "Automation".
   
   - platform: template
     name: "Comparison Sens1"
@@ -292,7 +292,7 @@ sensor:
         return {};
       }
 
-  # DHT TMP and HUMIDITY SENSOR  #   Delet if not used
+  # DHT TMP and HUMIDITY SENSOR  #  https://esphome.io/components/sensor/dht.html    Delet if not used
   - platform: dht
     pin: 5
     temperature:
@@ -303,7 +303,7 @@ sensor:
       id: "dhthumidity"
     update_interval: 5s
 
-  # DISTANCE SENSOR #     # You can measure the height of the plant and plot the growth reight
+  # DISTANCE SENSOR #     # You can measure the height of the plant and plot the growth reight #  https://esphome.io/components/sensor/vl53l0x.html?highlight=vl53l0  Delet if not used
   - platform: vl53l0x
     name: "Droplet VL53L0x Distance"
     id: "distance"
@@ -311,7 +311,7 @@ sensor:
     update_interval: 2s
     long_range: true
 
-  # BMP280 TMP and HUMIDITY SENSOR #   Delet if not used
+  # BMP280 TMP and HUMIDITY SENSOR #  https://esphome.io/components/sensor/bmp280.html?highlight=bmp280   Delet if not used
   - platform: bmp280
     temperature:
       name: "Droplet bmp280 Temperature"
@@ -324,9 +324,9 @@ sensor:
 
 
 
-  # TMP SENSOR "18b20" Change Adress foy your sensor #
+  # TMP SENSOR "18b20" Change Adress foy your sensor #  Integrated Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
   - platform: dallas
-    address: 0xCD062180E9A6F228  
+    address: 0x4F0121A047A61228
     name: "Droplet Integrated TMP"
     id: "intergratedtmp"
 
@@ -346,7 +346,7 @@ sensor:
 
 switch:
 
-  # PUMPS GPIOs #
+  # PUMPS GPIOs #  https://esphome.io/components/switch/gpio.html?highlight=switch
 
   - platform: gpio
     pin: 13
@@ -384,107 +384,117 @@ switch:
     restore_mode: ALWAYS_OFF
 
 
-  # RELAY GPIOs #
+  # RELAY GPIOs For Droplet Main board # Delete if using expansion board with integrated IC SN74HC595
 
-  - platform: gpio
-    pin: 19
-    id: 'relay1'
-    name: "Droplet Relay1"
-    inverted: true
-    restore_mode: ALWAYS_OFF
+#  - platform: gpio
+#    pin: 19
+#    id: 'relay1'
+#    name: "Droplet Relay1"
+#    inverted: true
+#    restore_mode: ALWAYS_OFF
 
 
-  - platform: gpio
-    pin: 26
-    id: 'relay2'
-    name: "Droplet Relay2"
-    inverted: true
-    restore_mode: ALWAYS_OFF
+#  - platform: gpio
+#    pin: 26
+#    id: 'relay2'
+#    name: "Droplet Relay2"
+#    inverted: true
+#    restore_mode: ALWAYS_OFF
 
     
+#  - platform: gpio
+#    pin: 2
+#    id: 'relay3'
+#    name: "Droplet Relay3"
+#    inverted: true
+#    restore_mode: ALWAYS_OFF
+
+
+#  - platform: gpio
+#    pin: 27
+#    id: 'relay4'
+#    name: "Droplet Relay4"
+#    inverted: true
+#    restore_mode: ALWAYS_OFF
+
+
+
+
+
+  # SN74HC595 FOR EXPANSION BOARD # Uncomment when using expansion board  https://esphome.io/components/sn74hc595.html?highlight=sn74hc595
   - platform: gpio
-    pin: 2
-    id: 'relay3'
-    name: "Droplet Relay3"
-    inverted: true
+    name: "Droplet Expansion Board Pin #8"
     restore_mode: ALWAYS_OFF
+    pin:
+      sn74hc595: sn74hc595_hub
+      number: 0
+      inverted: true
 
 
   - platform: gpio
-    pin: 27
-    id: 'relay4'
-    name: "Droplet Relay4"
-    inverted: true
+    name: "Droplet Expansion Board Pin #1"
     restore_mode: ALWAYS_OFF
+    pin:
+      sn74hc595: sn74hc595_hub
+      number: 1
+      inverted: true
+
+  - platform: gpio
+    name: "Droplet Expansion Board Pin #2"
+    restore_mode: ALWAYS_OFF
+    pin:
+      sn74hc595: sn74hc595_hub
+      number: 2
+      inverted: true
+
+  - platform: gpio
+    name: "Droplet Expansion Board Pin #3"
+    restore_mode: ALWAYS_OFF
+    pin:
+      sn74hc595: sn74hc595_hub
+      number: 3
+      inverted: true
+
+  - platform: gpio
+    name: "Droplet Expansion Board Pin #4"
+    restore_mode: ALWAYS_OFF
+    pin:
+      sn74hc595: sn74hc595_hub
+      number: 4
+      inverted: true
+
+  - platform: gpio
+    name: "Droplet Expansion Board Pin #5"
+    restore_mode: ALWAYS_OFF
+    pin:
+      sn74hc595: sn74hc595_hub
+      number: 5
+      inverted: true
+
+  - platform: gpio
+    name: "Droplet Expansion Board Pin #6"
+    restore_mode: ALWAYS_OFF
+    pin:
+      sn74hc595: sn74hc595_hub
+      number: 6
+      inverted: true
+
+  - platform: gpio
+    name: "Droplet Expansion Board Pin #7"
+    restore_mode: ALWAYS_OFF
+    pin:
+      sn74hc595: sn74hc595_hub
+      number: 7
+      inverted: true
 
 
-
-
-
-  # SN74HC595 FOR EXPANSION BOARD #
-#  - platform: gpio
-#    name: "Droplet Expansion Board Pin #0"
-#    pin:
-#      sn74hc595: sn74hc595_hub
-#      number: 0
-#      inverted: false
-
-#  - platform: gpio
-#    name: "Droplet Expansion Board Pin #1"
-#    pin:
-#      sn74hc595: sn74hc595_hub
-#      number: 1
-#      inverted: false
-
-#  - platform: gpio
-#    name: "Droplet Expansion Board Pin #2"
-#    pin:
-#      sn74hc595: sn74hc595_hub
-#      number: 2
-#      inverted: false
-
-#  - platform: gpio
-#    name: "Droplet Expansion Board Pin #3"
-#    pin:
-#      sn74hc595: sn74hc595_hub
-#      number: 3
-#      inverted: false
-
-#  - platform: gpio
-#    name: "Droplet Expansion Board Pin #4"
-#    pin:
-#      sn74hc595: sn74hc595_hub
-#      number: 4
-#      inverted: false
-
-#  - platform: gpio
-#    name: "Droplet Expansion Board Pin #5"
-#    pin:
-#      sn74hc595: sn74hc595_hub
-#      number: 5
-#      inverted: false
-
-#  - platform: gpio
-#    name: "Droplet Expansion Board Pin #6"
-#    pin:
-#      sn74hc595: sn74hc595_hub
-#      number: 6
-#      inverted: false
-
-#  - platform: gpio
-#    name: "Droplet Expansion Board Pin #7"
-#    pin:
-#      sn74hc595: sn74hc595_hub
-#      number: 7
-#      inverted: false
-
-
-
+  - platform: restart
+    name: "Droplet Restart"
 
 
 output:
 
-  # BUZZER #
+  # Integrated BUZZER # If you using pin23 for something else, delete this and remove jumper 1  https://esphome.io/components/output/ledc.html?highlight=buzzer
   - platform: ledc
     pin: GPIO23
     id: rtttl_out
@@ -495,7 +505,7 @@ output:
 
 binary_sensor:
 
-  # BUTTON SHORT and LONG PRES AVALIABLE ON HOME ASSISTANT #
+  # BUTTON SHORT and LONG PRES AVALIABLE IN HOME ASSISTANT #  https://esphome.io/components/binary_sensor/index.html?highlight=binary_sensor
   - platform: gpio
     name: "Droplet_Button_Short_Press"
     pin:
