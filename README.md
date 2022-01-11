@@ -25,7 +25,7 @@
   Expansion Board
   
   
- ![ExpBoard](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/ExpBoard.JPG)
+ ![ExpBoard](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/ExpaBoard.JPG)
  
  
  1. 1x JST 10pin Outputs for 8 Relays "SN74HC595" shift register used GPIO pns "19, 26, 2, 27" https://esphome.io/components/sn74hc595.html?highlight=sn74hc595
