@@ -28,17 +28,16 @@
  ![ExpBoard](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/ExpaBoard.JPG)
  
  
- 1. 1x JST 8pin Outputs for 8 Relays  "MCP23017" Expander  https://esphome.io/components/mcp230xx.html
+ 1. 1x JST 10pin connector Outputs for 8 Relays  "MCP23017" Expander  https://esphome.io/components/mcp230xx.html
  2. 1x 8 Pin Header "MCP23017" Expander  https://esphome.io/components/mcp230xx.html
  3. 2x JST 4pin i2c (V, GPIO 21, GPIO 22 GND)
- 4. 1x 2 Pin Header TX and RX
- 5. 4x JST 4pin (GPIO5, V, GND)  (GPIO 15, V, GND)  (V GPIO 14, V GND)  (GPIO 12, V, GND)
- 6. 1x JST 3pin for "DS18B20 TMP Sensors" (3.3v, GPIO 25, GND)
- 7. 1x 1pin Header GPIO23 connected to buzzer. Buzzer port can be free up, "remove jumper JP"
+ 4. 7x JST 3pin
+ 5. 1x JST 3pin for "DS18B20 TMP Sensors" (3.3v, GPIO 25, GND)
+ 6. 1x 1pin Header GPIO23 connected to buzzer. Buzzer port can be free up, "remove jumper JP"
  
  
 
- What sensors does it support ? "All sensors supported by ESPHome" https://esphome.io/index.html
+ What sensors Droplet support ? "All sensors supported by ESPHome" https://esphome.io/index.html
  
  
  I connected and tested at the same time.
@@ -48,7 +47,7 @@
  1x BMP280 Temperature and Pressure, 
  1x VL53L0x Distance Sensor, 
  1x DHT Temperature and Humidity, 
- 4x Relays. 
+ 8x Relays. 
  
  
  ![HA](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/HASensors.JPG)
