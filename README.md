@@ -1,6 +1,11 @@
 # Droplet
  ALL-IN-ONE Plants watering and monitoring system for ESPHome and Home Assistant.
  
+ 
+ ![DROPLETFull](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/dropletfull.JPEG)
+ 
+ 
+ 
    Main Board
    
    
