@@ -21,7 +21,7 @@ wifi:
   password: "YOUR_PASSWORD"
   fast_connect: on
 
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
+   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "Droplet Fallback Hotspot"
     password: "password"
@@ -33,19 +33,17 @@ dallas:  # Integrated Temperature Sensor. https://esphome.io/components/sensor/d
     update_interval: 5s
 
 
-sn74hc595: # For Expansion board.  Uncomment when using expansion board https://esphome.io/components/sn74hc595.html?highlight=sn74hc595
-  - id: 'sn74hc595_hub'
-    data_pin: 19
-    clock_pin: 27
-    latch_pin: 2
-    oe_pin: 26
-    sr_count: 1
 
-
-i2c: # Oled Display and sensor i2c Pins
+i2c: # i2c Pins
   sda: 21
   scl: 22
   scan: true
+
+
+mcp23017: # FOR EXPANSION BOARD # Uncomment when using expansion board  https://esphome.io/components/mcp230xx.html
+  - id: 'mcp23017_hub'
+    address: 0x20
+
 
 font: # Fonts for Display
   - file: 'arial.ttf'
@@ -58,7 +56,7 @@ font: # Fonts for Display
     id: font3
     size: 14
 
-display: # More info https://esphome.io/components/display/ssd1306.html?highlight=1306
+display: # More info https://esphome.io/components/display/ssd1306.html?highlight=1306         
   - platform: ssd1306_i2c
     id: oled
     model: "SSD1306 128x64"
@@ -68,9 +66,9 @@ display: # More info https://esphome.io/components/display/ssd1306.html?highligh
       it.printf(61, 0, id(font2) ,"%.1f", id(dbm).state);
       it.line(0, 12, 98, 12);
       it.line(98, 0, 98, 64);
-      it.printf(0, 15, id(font3) ,"%.1f°C", id(intergratedtmp).state);
-      it.printf(0, 30, id(font3) ,"%.1fH", id(dhthumidity).state);
-      it.printf(0, 45, id(font3) ,"%.1fP", id(pressure).state);
+      it.printf(5, 15, id(font3) ,"%.1f°C", id(intergratedtmp).state);
+      it.printf(5, 30, id(font3) ,"%.1fH", id(dhthumidity).state);
+      it.printf(5, 45, id(font3) ,"%.1fP", id(pressure).state);
       it.printf(102, 0, id(font2) ,"%.1f", id(Soil1).state);
       it.printf(102, 12, id(font2) ,"%.1f", id(Soil2).state);
       it.printf(102, 24, id(font2) ,"%.1f", id(Soil3).state);
@@ -324,11 +322,18 @@ sensor:
 
 
 
-  # TMP SENSOR "18b20" Change Adress foy your sensor #  Integrated Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
+   # TMP SENSOR "18b20" Change Adress foy your sensor #  Integrated Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
   - platform: dallas
-    address: 0x4F0121A047A61228
+    address: 0x750121A05545AB28
     name: "Droplet Integrated TMP"
     id: "intergratedtmp"
+
+
+   # TMP SENSOR "18b20" Change Adress foy your sensor #  Integrated Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
+  - platform: dallas
+    address: 0x30062180EFF26828
+    name: "Droplet External TMP"
+    id: "externaltmp"
 
 
     
@@ -384,7 +389,7 @@ switch:
     restore_mode: ALWAYS_OFF
 
 
-  # RELAY GPIOs For Droplet Main board # Delete if using expansion board with integrated IC SN74HC595
+  # RELAY GPIOs For Droplet Main board # Delete if using expansion board with integrated IC MCP230017
 
 #  - platform: gpio
 #    pin: 19
@@ -418,74 +423,182 @@ switch:
 #    restore_mode: ALWAYS_OFF
 
 
-
-
-
-  # SN74HC595 FOR EXPANSION BOARD # Uncomment when using expansion board  https://esphome.io/components/sn74hc595.html?highlight=sn74hc595
+# MCP230017 FOR EXPANSION BOARD # Uncomment when using expansion board  https://esphome.io/components/mcp230xx.html
   - platform: gpio
-    name: "Droplet Expansion Board Pin #8"
+    name: "MCP23017 Pin #0"
     restore_mode: ALWAYS_OFF
     pin:
-      sn74hc595: sn74hc595_hub
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
       number: 0
-      inverted: true
-
+      mode:
+        output: true
+      inverted: false
 
   - platform: gpio
-    name: "Droplet Expansion Board Pin #1"
+    name: "MCP23017 Pin #1"
     restore_mode: ALWAYS_OFF
     pin:
-      sn74hc595: sn74hc595_hub
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
       number: 1
-      inverted: true
+      mode:
+        output: true
+      inverted: false
 
   - platform: gpio
-    name: "Droplet Expansion Board Pin #2"
+    name: "MCP23017 Pin #2"
     restore_mode: ALWAYS_OFF
     pin:
-      sn74hc595: sn74hc595_hub
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
       number: 2
-      inverted: true
+      mode:
+        output: true
+      inverted: false
 
   - platform: gpio
-    name: "Droplet Expansion Board Pin #3"
+    name: "MCP23017 Pin #3"
     restore_mode: ALWAYS_OFF
     pin:
-      sn74hc595: sn74hc595_hub
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
       number: 3
-      inverted: true
+      mode:
+        output: true
+      inverted: false
 
   - platform: gpio
-    name: "Droplet Expansion Board Pin #4"
+    name: "MCP23017 Pin #4"
     restore_mode: ALWAYS_OFF
     pin:
-      sn74hc595: sn74hc595_hub
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
       number: 4
-      inverted: true
+      mode:
+        output: true
+      inverted: false
 
   - platform: gpio
-    name: "Droplet Expansion Board Pin #5"
+    name: "MCP23017 Pin #5"
     restore_mode: ALWAYS_OFF
     pin:
-      sn74hc595: sn74hc595_hub
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
       number: 5
-      inverted: true
+      mode:
+        output: true
+      inverted: false
 
   - platform: gpio
-    name: "Droplet Expansion Board Pin #6"
+    name: "MCP23017 Pin #6"
     restore_mode: ALWAYS_OFF
     pin:
-      sn74hc595: sn74hc595_hub
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
       number: 6
-      inverted: true
+      mode:
+        output: true
+      inverted: false
 
   - platform: gpio
-    name: "Droplet Expansion Board Pin #7"
+    name: "MCP23017 Pin #7"
     restore_mode: ALWAYS_OFF
     pin:
-      sn74hc595: sn74hc595_hub
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
       number: 7
-      inverted: true
+      mode:
+        output: true
+      inverted: false
+
+  - platform: gpio
+    name: "MCP23017 Pin #8"
+    restore_mode: ALWAYS_OFF
+    pin:
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
+      number: 8
+      mode:
+        output: true
+      inverted: false
+
+  - platform: gpio
+    name: "MCP23017 Pin #9"
+    restore_mode: ALWAYS_OFF
+    pin:
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
+      number: 9
+      mode:
+        output: true
+      inverted: false
+
+  - platform: gpio
+    name: "MCP23017 Pin #10"
+    restore_mode: ALWAYS_OFF
+    pin:
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
+      number: 10
+      mode:
+        output: true
+      inverted: false
+
+  - platform: gpio
+    name: "MCP23017 Pin #11"
+    restore_mode: ALWAYS_OFF
+    pin:
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
+      number: 11
+      mode:
+        output: true
+      inverted: false
+
+  - platform: gpio
+    name: "MCP23017 Pin #12"
+    restore_mode: ALWAYS_OFF
+    pin:
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
+      number: 12
+      mode:
+        output: true
+      inverted: false
+
+  - platform: gpio
+    name: "MCP23017 Pin #13"
+    restore_mode: ALWAYS_OFF
+    pin:
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
+      number: 13
+      mode:
+        output: true
+      inverted: false
+
+  - platform: gpio
+    name: "MCP23017 Pin #14"
+    restore_mode: ALWAYS_OFF
+    pin:
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
+      number: 14
+      mode:
+        output: true
+      inverted: false
+
+  - platform: gpio
+    name: "MCP23017 Pin #15"
+    restore_mode: ALWAYS_OFF
+    pin:
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
+      number: 15
+      mode:
+        output: true
+      inverted: false
 
 
   - platform: restart
@@ -522,5 +635,3 @@ binary_sensor:
     name: "Droplet_Button_Long_Press"
     filters:
       - delayed_on: 1s
-
-
