@@ -45,7 +45,7 @@ mcp23017: # FOR EXPANSION BOARD # Uncomment when using expansion board  https://
     address: 0x20
 
 
-font: # Fonts for Display
+font: # Fonts for Display  Copy arial.ttf file into esphome folder
   - file: 'arial.ttf'
     id: font1
     size: 8
