@@ -22,7 +22,7 @@
  8. All pumps outputs and moisture sensor inputs have fuses
  9. Pins Which can be used "GPIO 19,5,26,2,15,27,14,12" and "1xi2c GPIO 21,22" "1xUART" "GPIO25 External port for DS18B20 TMP Sensor!!"
  
-  Expansion Board
+  Expansion Board v3
   
   
  ![ExpBoard](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/ExpaBoard.JPG)
