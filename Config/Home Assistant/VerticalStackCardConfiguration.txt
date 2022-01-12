@@ -1,0 +1,44 @@
+type: vertical-stack
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - input_number.moisture_level_for_pump1
+          - type: sensor
+            entity: sensor.droplet_soilm_sens_1
+            graph: line
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - input_number.moisture_level_for_pump2
+          - type: sensor
+            entity: sensor.droplet_soilm_sens_2
+            graph: line
+  - type: horizontal-stack
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - input_number.moisture_level_for_pump3
+          - type: sensor
+            entity: sensor.droplet_soilm_sens_3
+            graph: line
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: input_number.moisture_level_for_pump4
+          - type: sensor
+            entity: sensor.droplet_soilm_sens_4
+            graph: line
+  - type: entities
+    entities:
+      - input_number.moisture_level_for_pump5
+  - type: sensor
+    entity: sensor.droplet_soilm_sens_5
+    graph: line
