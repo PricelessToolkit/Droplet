@@ -51,5 +51,13 @@
  1x DHT Temperature and Humidity, 
  8x Relays. 
  
+                      ---- PARTS ----
+!!! Deleted the old link to the pumps since I ordered 30 pieces of which 10 were for air !!!
+Pump 1 - https://s.click.aliexpress.com/e/_ALYwZv
+Pump 2 - https://s.click.aliexpress.com/e/_9ftc3N
+
+Heat Set Insert - https://s.click.aliexpress.com/e/_9xbSZC
+Capacitive Soil Moisture Sensor - https://s.click.aliexpress.com/e/_9Qz84W
+ 
  
  ![HA](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/HASensors.JPG)
