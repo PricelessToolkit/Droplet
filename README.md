@@ -1,6 +1,8 @@
 # Droplet
  ALL-IN-ONE Irrigation and monitoring system for ESPHome and Home Assistant.
  
+ !!!!! I will upload the Gerber files when I receive the new expansion boards. I want to make sure everything works. !!!!
+ 
  
  ![DROPLETFull](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/dropletfull.JPEG)
  
