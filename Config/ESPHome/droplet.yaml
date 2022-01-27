@@ -7,6 +7,8 @@ esphome:
     then:
       - lambda: id(oled).turn_off();
 
+      
+
 
 # Enable logging
 logger:
@@ -14,17 +16,19 @@ logger:
 
 
 ota:
-  password: "bfec11234d4fea57e1b5d3b985cfe06c"
+  password: "bfec11234xsfea57e1b5d3b985cfe06c"
 
 wifi:
-  ssid: "YOUR_WIFI"
-  password: "YOUR_PASSWORD"
+  ssid: "Your_WIFI_SSID"
+  password: "Your_WIFI_Password"
+  #power_save_mode: none
+  domain: .lab.lan
   fast_connect: on
 
-   # Enable fallback hotspot (captive portal) in case wifi connection fails
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "Droplet Fallback Hotspot"
-    password: "password"
+    password: "droplet"
 
 captive_portal:
 
@@ -40,12 +44,12 @@ i2c: # i2c Pins
   scan: true
 
 
-mcp23017: # FOR EXPANSION BOARD # Uncomment when using expansion board  https://esphome.io/components/mcp230xx.html
+mcp23017: # Expansion Board  https://esphome.io/components/mcp230xx.html
   - id: 'mcp23017_hub'
     address: 0x20
 
 
-font: # Fonts for Display  Copy arial.ttf file into esphome folder
+font: # Fonts for Display
   - file: 'arial.ttf'
     id: font1
     size: 8
@@ -324,7 +328,7 @@ sensor:
 
    # TMP SENSOR "18b20" Change Adress foy your sensor #  Integrated Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
   - platform: dallas
-    address: 0x750121A05545AB28
+    address: 0xcd062180e9a6f228
     name: "Droplet Integrated TMP"
     id: "intergratedtmp"
 
@@ -389,38 +393,6 @@ switch:
     restore_mode: ALWAYS_OFF
 
 
-  # RELAY GPIOs For Droplet Main board # Delete if using expansion board with integrated IC MCP230017
-
-#  - platform: gpio
-#    pin: 19
-#    id: 'relay1'
-#    name: "Droplet Relay1"
-#    inverted: true
-#    restore_mode: ALWAYS_OFF
-
-
-#  - platform: gpio
-#    pin: 26
-#    id: 'relay2'
-#    name: "Droplet Relay2"
-#    inverted: true
-#    restore_mode: ALWAYS_OFF
-
-    
-#  - platform: gpio
-#    pin: 2
-#    id: 'relay3'
-#    name: "Droplet Relay3"
-#    inverted: true
-#    restore_mode: ALWAYS_OFF
-
-
-#  - platform: gpio
-#    pin: 27
-#    id: 'relay4'
-#    name: "Droplet Relay4"
-#    inverted: true
-#    restore_mode: ALWAYS_OFF
 
 
 # MCP230017 FOR EXPANSION BOARD # Uncomment when using expansion board  https://esphome.io/components/mcp230xx.html
@@ -433,7 +405,7 @@ switch:
       number: 0
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #1"
@@ -444,7 +416,7 @@ switch:
       number: 1
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #2"
@@ -455,7 +427,7 @@ switch:
       number: 2
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #3"
@@ -466,7 +438,7 @@ switch:
       number: 3
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #4"
@@ -477,7 +449,7 @@ switch:
       number: 4
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #5"
@@ -488,7 +460,7 @@ switch:
       number: 5
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #6"
@@ -499,7 +471,7 @@ switch:
       number: 6
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #7"
@@ -510,7 +482,7 @@ switch:
       number: 7
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #8"
@@ -521,7 +493,7 @@ switch:
       number: 8
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #9"
@@ -532,7 +504,7 @@ switch:
       number: 9
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #10"
@@ -543,7 +515,7 @@ switch:
       number: 10
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #11"
@@ -554,7 +526,7 @@ switch:
       number: 11
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #12"
@@ -565,7 +537,7 @@ switch:
       number: 12
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #13"
@@ -576,7 +548,7 @@ switch:
       number: 13
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #14"
@@ -587,7 +559,7 @@ switch:
       number: 14
       mode:
         output: true
-      inverted: false
+      inverted: true
 
   - platform: gpio
     name: "MCP23017 Pin #15"
@@ -598,7 +570,7 @@ switch:
       number: 15
       mode:
         output: true
-      inverted: false
+      inverted: true
 
 
   - platform: restart
@@ -635,3 +607,5 @@ binary_sensor:
     name: "Droplet_Button_Long_Press"
     filters:
       - delayed_on: 1s
+
+
