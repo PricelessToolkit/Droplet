@@ -1,7 +1,9 @@
+# Youtube How-To https://youtu.be/mCXTqONmpZk
+
 # Droplet
  ALL-IN-ONE Irrigation and monitoring system for ESPHome and Home Assistant.
  
- 
+
  
  ![DROPLETFull](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/dropletfull.JPEG)
  
