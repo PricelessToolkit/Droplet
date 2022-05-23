@@ -1,4 +1,5 @@
 # Youtube How-To https://youtu.be/mCXTqONmpZk
+# Shop https://www.pricelesstoolkit.com/en/
 
 # Droplet
  ALL-IN-ONE Irrigation and monitoring system for ESPHome and Home Assistant.
