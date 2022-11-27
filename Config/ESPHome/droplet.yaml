@@ -22,7 +22,7 @@ wifi:
   ssid: "Your_WIFI_SSID"
   password: "Your_WIFI_Password"
   #power_save_mode: none
-  domain: .lab.lan
+  #domain: .lab.lan
   fast_connect: on
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
