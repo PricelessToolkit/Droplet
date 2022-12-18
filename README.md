@@ -95,11 +95,10 @@ First, you need to create in the ESPhome new device using the Droplet Config fil
 
 !!! Deleted the old link to the pumps since I ordered 30 pieces of which 10 were for air !!!
 
+* Power adapter 5v 2-3.5Ah Connecteur DC-005 2.0 - https://s.click.aliexpress.com/e/_DEsuOdV
 * Pump 1 - https://s.click.aliexpress.com/e/_ALYwZv
-
 * Pump 2 - https://s.click.aliexpress.com/e/_9ftc3N
-
+* Silicone tube - https://s.click.aliexpress.com/e/_DBnM9qL
 * Heat Set Insert - https://s.click.aliexpress.com/e/_9xbSZC
-
 * Capacitive Soil Moisture Sensor - https://s.click.aliexpress.com/e/_9Qz84W
- 
+* 3D Case "For those who live in France" you can order here - https://www.facebook.com/Upin3d
