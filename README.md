@@ -58,8 +58,33 @@
  ![HA](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/HASensors.JPG)
  
  
+#First time setup 
+
+**WIFI Captive Portal**
+The captive portal component in ESPHome is a fallback mechanism for when connecting to the configured WiFi fails.
+After 1 minute of unsuccessful WiFi connection attempts, the ESP will start a WiFi hotspot with the credentials
+
+SSID: "Droplet Fallback Hotspot"
+password: "password"
+
+
+When you connect to the fallback network, the web interface should open automatically (see also login to network notifications).
+If that does not work, you can also navigate to http://192.168.4.1/ manually in your browser.
+In this web interface, you can manually override the WiFi settings of the device.
+Additionally, you can upload a new firmware file to your node without having to use a USB cable for uploads.
+
+
+**Reflashing via USB-UART adapter**
+First, you need to create in the ESPhome new device using the Droplet Config file "don't forget to change it to your needs" then compile it and download the ".bin" file. To upload it to the Droplet, we also need  "ESPHome Flasher" software
+
+1. Connect your USB-UART adapter to your PC
+2. Push the "PRG" button on the Droplet Mainboard "don't release it"
+3. Plug the power adapter and wait for a second, then release the button
+4. Connect your USB-UART cables TX, RX, and GND to "J1"
+5. Upload firmware via ESPHome Flasher
+ 
   
-                                ---- PARTS ----
+                               **PARTS**
 !!! Deleted the old link to the pumps since I ordered 30 pieces of which 10 were for air !!!
 
 Pump 1 - https://s.click.aliexpress.com/e/_ALYwZv
