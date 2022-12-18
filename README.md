@@ -1,8 +1,7 @@
-# Youtube How-To https://youtu.be/mCXTqONmpZk
-# Shop https://www.pricelesstoolkit.com
-
 # Droplet
  ALL-IN-ONE Irrigation and monitoring system for ESPHome and Home Assistant.
+ * Youtube How-To https://youtu.be/mCXTqONmpZk
+ * Shop https://www.pricelesstoolkit.com
  
 
  
@@ -10,7 +9,7 @@
  
  
  
-   Main Board
+   ### Main Board
    
    
  ![DROPLET](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/droplet.jpg)
@@ -26,7 +25,7 @@
  8. All pumps outputs and moisture sensor inputs have fuses
  9. Pins Which can be used "GPIO 19,5,26,2,15,27,14,12" and "1xi2c GPIO 21,22" "1xUART" "GPIO25 External port for DS18B20 TMP Sensor!!"
  
-  Expansion Board v3
+  ### Expansion Board v3
   
   
  ![ExpBoard](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/ExpaBoard.JPG)
@@ -41,32 +40,33 @@
  
  
 
- What sensors Droplet support ? "All sensors supported by ESPHome" https://esphome.io/index.html
+ ## What sensors Droplet support ? "All sensors supported by ESPHome" https://esphome.io/index.html
  
  
  I connected and tested at the same time.
- 5x Pump
- 5x Moisture Sensor V2, 
- 2x "DS18B20" Temperature, 
- 1x BMP280 Temperature and Pressure, 
- 1x VL53L0x Distance Sensor, 
- 1x DHT Temperature and Humidity, 
- 8x Relays. 
+* 5x Pump
+* 5x Moisture Sensor V2, 
+* 2x "DS18B20" Temperature, 
+* 1x BMP280 Temperature and Pressure, 
+* 1x VL53L0x Distance Sensor, 
+* 1x DHT Temperature and Humidity, 
+* 8x Relays. 
  
  
  
  ![HA](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/HASensors.JPG)
  
  
-#First time setup 
+## First time setup
 
-**WIFI Captive Portal**
+### WIFI Captive Portal
+
 The captive portal component in ESPHome is a fallback mechanism for when connecting to the configured WiFi fails.
 After 1 minute of unsuccessful WiFi connection attempts, the ESP will start a WiFi hotspot with the credentials
-
+```
 SSID: "Droplet Fallback Hotspot"
 password: "password"
-
+```
 
 When you connect to the fallback network, the web interface should open automatically (see also login to network notifications).
 If that does not work, you can also navigate to http://192.168.4.1/ manually in your browser.
@@ -74,24 +74,30 @@ In this web interface, you can manually override the WiFi settings of the device
 Additionally, you can upload a new firmware file to your node without having to use a USB cable for uploads.
 
 
-**Reflashing via USB-UART adapter**
+### Reflashing via USB-UART adapter
+
 First, you need to create in the ESPhome new device using the Droplet Config file "don't forget to change it to your needs" then compile it and download the ".bin" file. To upload it to the Droplet, we also need  "ESPHome Flasher" software
 
-1. Connect your USB-UART adapter to your PC
-2. Push the "PRG" button on the Droplet Mainboard "don't release it"
-3. Plug the power adapter and wait for a second, then release the button
-4. Connect your USB-UART cables TX, RX, and GND to "J1"
-5. Upload firmware via ESPHome Flasher
+* Connect your USB-UART adapter to your PC
+* Push the "PRG" button on the Droplet Mainboard "don't release it"
+* Plug the power adapter and wait for a second, then release the button
+* Connect your USB-UART cables TX, RX, and GND to "J1"
+* Upload firmware via ESPHome Flasher
  
+
+
+
+
   
-                               **PARTS**
+## Part List
+
 !!! Deleted the old link to the pumps since I ordered 30 pieces of which 10 were for air !!!
 
-Pump 1 - https://s.click.aliexpress.com/e/_ALYwZv
+* Pump 1 - https://s.click.aliexpress.com/e/_ALYwZv
 
-Pump 2 - https://s.click.aliexpress.com/e/_9ftc3N
+* Pump 2 - https://s.click.aliexpress.com/e/_9ftc3N
 
-Heat Set Insert - https://s.click.aliexpress.com/e/_9xbSZC
+* Heat Set Insert - https://s.click.aliexpress.com/e/_9xbSZC
 
-Capacitive Soil Moisture Sensor - https://s.click.aliexpress.com/e/_9Qz84W
+* Capacitive Soil Moisture Sensor - https://s.click.aliexpress.com/e/_9Qz84W
  
