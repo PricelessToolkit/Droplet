@@ -40,7 +40,7 @@
  
  
 
- ## What sensors Droplet support ? "All sensors supported by ESPHome" https://esphome.io/index.html
+ ### What sensors Droplet support ? "All sensors supported by ESPHome" https://esphome.io/index.html
  
  
  I connected and tested at the same time.
