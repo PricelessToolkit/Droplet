@@ -81,7 +81,7 @@ Additionally, you can upload a new firmware file to your node without having to 
 First, you need to create in the ESPhome new device using the Droplet Config file "don't forget to change it to your needs" then compile it and download the ".bin" file. To upload it to the Droplet, we also need  "ESPHome Flasher" software
 
 * Connect your USB-UART adapter to your PC
-* Push the "PRG" button on the Droplet Mainboard "don't release it"
+* Push the "PROG" button on the Droplet Mainboard "don't release it"
 * Plug the power adapter and wait for a second, then release the button
 * Connect your USB-UART cables TX, RX, and GND to "J1"
 * Upload firmware via ESPHome Flasher
