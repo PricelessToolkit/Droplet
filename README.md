@@ -73,6 +73,8 @@ If that does not work, you can also navigate to http://192.168.4.1/ manually in 
 In this web interface, you can manually override the WiFi settings of the device.
 Additionally, you can upload a new firmware file to your node without having to use a USB cable for uploads.
 
+<img src="https://esphome.io/_images/captive_portal-ui.png" width="390" height="400" />
+
 
 ### Reflashing via USB-UART adapter
 
