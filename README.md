@@ -100,6 +100,6 @@ First, you need to create in the ESPhome new device using the Droplet Config fil
 * Pump 1 - https://s.click.aliexpress.com/e/_ALYwZv
 * Pump 2 - https://s.click.aliexpress.com/e/_9ftc3N
 * Silicone tube - https://s.click.aliexpress.com/e/_DBnM9qL
-* Heat Set Insert - https://s.click.aliexpress.com/e/_9xbSZC
+* Heat Set Insert M3 X D4.6 X L4.5 - https://s.click.aliexpress.com/e/_9xbSZC
 * Capacitive Soil Moisture Sensor - https://s.click.aliexpress.com/e/_9Qz84W
 * 3D Case "For those who live in France" you can order here - https://www.facebook.com/Upin3d
