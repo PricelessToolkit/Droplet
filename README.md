@@ -33,9 +33,9 @@
  
  1. 1x JST 10pin connector Outputs for 8 Relays  "MCP23017" Expander  https://esphome.io/components/mcp230xx.html
  2. 1x 8 Pin Header "MCP23017" Expander  https://esphome.io/components/mcp230xx.html
- 3. 2x JST 4pin i2c (V, GPIO 21, GPIO 22 GND)
- 4. 7x JST 3pin GPIO 19,5,26,2,15,27,14
- 5. 1x JST 3pin for "DS18B20 TMP Sensors" (3.3v, GPIO 25, GND)
+ 3. 2x XH 4pin i2c (V, GPIO 21, GPIO 22 GND)
+ 4. 7x XH 3pin GPIO 19,5,26,2,15,27,14
+ 5. 1x XH 3pin for "DS18B20 TMP Sensors" (3.3v, GPIO 25, GND)
  6. 1x 1pin Header GPIO23 connected to buzzer. Buzzer port can be free up, "remove jumper JP"
  
  
@@ -102,4 +102,5 @@ First, you need to create in the ESPhome new device using the Droplet Config fil
 * Silicone tube - https://s.click.aliexpress.com/e/_DBnM9qL
 * Heat Set Insert M3 X D4.6 X L4.5 - https://s.click.aliexpress.com/e/_9xbSZC
 * Capacitive Soil Moisture Sensor - https://s.click.aliexpress.com/e/_9Qz84W
+* Connectors for sensors "pin pitch XH 2.54MM" - https://s.click.aliexpress.com/e/_DDpn7iB
 * 3D Case "For those who live in France" you can order here - https://www.facebook.com/Upin3d
