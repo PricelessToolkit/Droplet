@@ -228,8 +228,8 @@ sensor:
         id(pump1).toggle();
       } else {
         id(pump1).turn_off();
-        return {};
       }
+      return {};
 
   - platform: template
     name: "Comparison Sens2"
@@ -240,8 +240,8 @@ sensor:
         id(pump2).toggle();
       } else {
         id(pump2).turn_off();
-        return {};
       }
+      return {};
 
   - platform: template
     name: "Comparison Sens3"
@@ -252,8 +252,8 @@ sensor:
         id(pump3).toggle();
       } else {
         id(pump3).turn_off();
-        return {};
       }
+      return {};
 
   - platform: template
     name: "Comparison Sens4"
@@ -264,8 +264,8 @@ sensor:
         id(pump4).toggle();
       } else {
         id(pump4).turn_off();
-        return {};
       }
+      return {};
 
   - platform: template
     name: "Comparison Sens5"
@@ -276,8 +276,8 @@ sensor:
         id(pump5).toggle();
       } else {
         id(pump5).turn_off();
-        return {};
       }
+      return {};
 
   # DHT TMP and HUMIDITY SENSOR  #  https://esphome.io/components/sensor/dht.html    Delet if not used
   - platform: dht
