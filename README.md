@@ -15,8 +15,8 @@
  ![DROPLET](https://raw.githubusercontent.com/PricelessToolkit/Droplet/main/img/droplet.jpg)
  
 
- 1. 5x Micro Pump outputs
- 2. 5x Soil Moisture sensor inputs 'Pulled down with 1M ohm resistor'
+ 1. 5x Micro Pump outputs "5v"
+ 2. 5x Soil Moisture sensor inputs "Data-5v-GND" 'Data line pulled down with 1M ohm resistor' ( Data line MAX 3.3v !!!!! )
  3. Onboard Temperature sensor "DS18B20" https://esphome.io/components/sensor/dallas.html
  4. Onboard Buzzer "Buzzer port can be free up with jumper" https://esphome.io/components/rtttl.html?highlight=buzzer
  5. Breakout pins for connecting "i2c OLED Display" https://esphome.io/components/display/ssd1306.html?highlight=display
