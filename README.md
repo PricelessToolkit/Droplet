@@ -41,7 +41,7 @@
  
 
  ## What sensors Droplet support ?
- ### Droplet support "All sensors supported by ESPHome" https://esphome.io/index.html
+ ### Droplet support "Almost all sensors supported by ESPHome" https://esphome.io/index.html
  
  I connected and tested at the same time.
 * 5x Pump
