@@ -1,5 +1,8 @@
+substitutions:
+  name: Droplet
+
 esphome:
-  name: droplet
+  name: ${name}
   platform: ESP32
   board: esp32dev
   on_boot:
@@ -7,13 +10,8 @@ esphome:
     then:
       - lambda: id(oled).turn_off();
 
-      
-
-
 # Enable logging
 logger:
-
-
 
 ota:
   password: "bfec11234xsfea57e1b5d3b985cfe06c"
@@ -27,7 +25,7 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "Droplet Fallback Hotspot"
+    ssid: "${name} Fallback Hotspot"
     password: "password"
 
 captive_portal:
@@ -36,18 +34,14 @@ dallas:  # Integrated Temperature Sensor. https://esphome.io/components/sensor/d
   - pin: 25
     update_interval: 5s
 
-
-
 i2c: # i2c Pins
   sda: 21
   scl: 22
   scan: true
 
-
 mcp23017: # Expansion Board  https://esphome.io/components/mcp230xx.html
   - id: 'mcp23017_hub'
     address: 0x20
-
 
 font: # Fonts for Display
   - file: 'arial.ttf'
@@ -82,6 +76,7 @@ display: # More info https://esphome.io/components/display/ssd1306.html?highligh
 
 
   # Integrated BUZZER # If you using pin23 for something else, delete this and remove jumper 1
+
 rtttl:
   output: rtttl_out
   on_finished_playback:
@@ -101,12 +96,11 @@ api:
 
 
 sensor:
-
   # MOISTUR LEVEL SENSORS #   https://esphome.io/components/sensor/adc.html?highlight=adc
   - platform: adc
     pin: 34
     id: "Soil1"
-    name: "Droplet SoilM Sens 1"
+    name: "${name} SoilM Sens 1"
     icon: "mdi:water-percent"
     update_interval: 2s
     unit_of_measurement: "%"
@@ -124,7 +118,7 @@ sensor:
   - platform: adc
     pin: 35
     id: "Soil2"
-    name: "Droplet SoilM Sens 2"
+    name: "${name} SoilM Sens 2"
     icon: "mdi:water-percent"
     update_interval: 2s
     unit_of_measurement: "%"
@@ -142,7 +136,7 @@ sensor:
   - platform: adc
     pin: 32
     id: "Soil3"
-    name: "Droplet SoilM Sens 3"
+    name: "${name} SoilM Sens 3"
     icon: "mdi:water-percent"
     update_interval: 2s
     unit_of_measurement: "%"
@@ -160,7 +154,7 @@ sensor:
   - platform: adc
     pin: 33
     id: "Soil4"
-    name: "Droplet SoilM Sens 4"
+    name: "${name} SoilM Sens 4"
     icon: "mdi:water-percent"
     update_interval: 2s
     unit_of_measurement: "%"
@@ -178,7 +172,7 @@ sensor:
   - platform: adc
     pin: 39
     id: "Soil5"
-    name: "Droplet SoilM Sens 5"
+    name: "${name} SoilM Sens 5"
     icon: "mdi:water-percent"
     update_interval: 2s
     unit_of_measurement: "%"
@@ -192,8 +186,6 @@ sensor:
         else if (x > 100) return 100;
         else return (x);
     accuracy_decimals: 0
-
-
 
   # HOME ASSISTANT DESIRED MOISTURE LEVELS #  https://esphome.io/components/sensor/homeassistant.html
   - platform: homeassistant
@@ -226,45 +218,39 @@ sensor:
     internal: true
     entity_id: input_number.moisture_level_for_pump5
 
-
-
-
   # KEEPS MOISTURE LEVEL # Comment out or delete these 5 sensors "Comparison Sens 1,2,3,4,5" if you want to automate the Soil Moisture level with Home Assistant "Automation".
-  
   - platform: template
     name: "Comparison Sens1"
     internal: true
     update_interval: 2s # Seconds to pump water then stops pumping and starts comparing sensors data, if needed it will pump again
     lambda: |-
-      if (id(Soil1).state < id(desired_mois_value_1).state){
+      if (id(Soil1).state < id(desired_mois_value_1).state) {
         id(pump1).toggle();
-      }else{
+      } else {
         id(pump1).turn_off();
         return {};
       }
-
 
   - platform: template
     name: "Comparison Sens2"
     internal: true
     update_interval: 2s # Seconds to pump water then stops pumping and starts comparing sensors data, if needed it will pump again
     lambda: |-
-      if (id(Soil2).state < id(desired_mois_value_2).state){
+      if (id(Soil2).state < id(desired_mois_value_2).state) {
         id(pump2).toggle();
-      }else{
+      } else {
         id(pump2).turn_off();
         return {};
       }
-
 
   - platform: template
     name: "Comparison Sens3"
     internal: true
     update_interval: 2s # Seconds to pump water then stops pumping and starts comparing sensors data, if needed it will pump again
     lambda: |-
-      if (id(Soil3).state < id(desired_mois_value_3).state){
+      if (id(Soil3).state < id(desired_mois_value_3).state) {
         id(pump3).toggle();
-      }else{
+      } else {
         id(pump3).turn_off();
         return {};
       }
@@ -274,22 +260,21 @@ sensor:
     internal: true
     update_interval: 2s # Seconds to pump water then stops pumping and starts comparing sensors data, if needed it will pump again
     lambda: |-
-      if (id(Soil4).state < id(desired_mois_value_4).state){
+      if (id(Soil4).state < id(desired_mois_value_4).state) {
         id(pump4).toggle();
-      }else{
+      } else {
         id(pump4).turn_off();
         return {};
       }
-
 
   - platform: template
     name: "Comparison Sens5"
     internal: true
     update_interval: 2s # Seconds to pump water then stops pumping and starts comparing sensors data, if needed it will pump again
     lambda: |-
-      if (id(Soil5).state < id(desired_mois_value_5).state){
+      if (id(Soil5).state < id(desired_mois_value_5).state) {
         id(pump5).toggle();
-      }else{
+      } else {
         id(pump5).turn_off();
         return {};
       }
@@ -298,16 +283,16 @@ sensor:
   - platform: dht
     pin: 5
     temperature:
-      name: "Droplet DHT Temperature"
+      name: "${name} DHT Temperature"
       id: "dhttemperature"
     humidity:
-      name: "Droplet DHT Humidity"
+      name: "${name} DHT Humidity"
       id: "dhthumidity"
     update_interval: 5s
 
   # DISTANCE SENSOR #     # You can measure the height of the plant and plot the growth reight #  https://esphome.io/components/sensor/vl53l0x.html?highlight=vl53l0  Delet if not used
   - platform: vl53l0x
-    name: "Droplet VL53L0x Distance"
+    name: "${name} VL53L0x Distance"
     id: "distance"
     address: 0x29
     update_interval: 2s
@@ -316,88 +301,73 @@ sensor:
   # BMP280 TMP and HUMIDITY SENSOR #  https://esphome.io/components/sensor/bmp280.html?highlight=bmp280   Delet if not used
   - platform: bmp280
     temperature:
-      name: "Droplet bmp280 Temperature"
+      name: "${name} bmp280 Temperature"
       oversampling: 16x
     pressure:
-      name: "Droplet bmp280 Pressure"
+      name: "${name} bmp280 Pressure"
       id: "pressure"
     address: 0x76
     update_interval: 5s
 
-
-
    # TMP SENSOR "18b20" Change Adress foy your sensor #  Integrated Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
   - platform: dallas
     address: 0xcd062180e9a6f228
-    name: "Droplet Integrated TMP"
+    name: "${name} Integrated TMP"
     id: "intergratedtmp"
-
 
    # TMP SENSOR "18b20" Change Adress foy your sensor #  Integrated Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
   - platform: dallas
     address: 0x30062180EFF26828
-    name: "Droplet External TMP"
+    name: "${name} External TMP"
     id: "externaltmp"
-
-
     
   # WIFI #
   - platform: wifi_signal
-    name: "Droplet_WiFi_Signal_Sensor"
+    name: "${name} WiFi Signal Sensor"
     id: "dbm"
     update_interval: 5s
-
-
-
-
-
-
 
 switch:
 
   # PUMPS GPIOs #  https://esphome.io/components/switch/gpio.html?highlight=switch
-
   - platform: gpio
     pin: 13
     id: 'pump1'
-    name: "Droplet Pump 1"
+    name: "${name} Pump 1"
     icon: "mdi:water-pump"
     restore_mode: ALWAYS_OFF
 
   - platform: gpio
     pin: 4
     id: 'pump2'
-    name: "Droplet Pump 2"
+    name: "${name} Pump 2"
     icon: "mdi:water-pump"
     restore_mode: ALWAYS_OFF
     
   - platform: gpio
     pin: 16
     id: 'pump3'
-    name: "Droplet Pump 3"
+    name: "${name} Pump 3"
     icon: "mdi:water-pump"
     restore_mode: ALWAYS_OFF
 
   - platform: gpio
     pin: 17
     id: 'pump4'
-    name: "Droplet Pump 4"
+    name: "${name} Pump 4"
     icon: "mdi:water-pump"
     restore_mode: ALWAYS_OFF
 
   - platform: gpio
     pin: 18
     id: 'pump5'
-    name: "Droplet Pump 5"
+    name: "${name} Pump 5"
     icon: "mdi:water-pump"
     restore_mode: ALWAYS_OFF
 
-
-
-
-# MCP230017 FOR EXPANSION BOARD # Uncomment when using expansion board  https://esphome.io/components/mcp230xx.html
+  # MCP230017 FOR EXPANSION BOARD # Uncomment when using expansion board  https://esphome.io/components/mcp230xx.html
   - platform: gpio
-    name: "MCP23017 Pin #0"
+    name: "${name} MCP23017 Pin #0"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -408,7 +378,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #1"
+    name: "${name} MCP23017 Pin #1"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -419,7 +389,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #2"
+    name: "${name} MCP23017 Pin #2"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -430,7 +400,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #3"
+    name: "${name} MCP23017 Pin #3"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -441,7 +411,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #4"
+    name: "${name} MCP23017 Pin #4"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -452,7 +422,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #5"
+    name: "${name} MCP23017 Pin #5"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -463,7 +433,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #6"
+    name: "${name} MCP23017 Pin #6"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -474,7 +444,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #7"
+    name: "${name} MCP23017 Pin #7"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -485,7 +455,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #8"
+    name: "${name} MCP23017 Pin #8"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -496,7 +466,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #9"
+    name: "${name} MCP23017 Pin #9"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -507,7 +477,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #10"
+    name: "${name} MCP23017 Pin #10"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -518,7 +488,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #11"
+    name: "${name} MCP23017 Pin #11"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -529,7 +499,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #12"
+    name: "${name} MCP23017 Pin #12"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -540,7 +510,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #13"
+    name: "${name} MCP23017 Pin #13"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -551,7 +521,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #14"
+    name: "${name} MCP23017 Pin #14"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -562,7 +532,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "MCP23017 Pin #15"
+    name: "${name} MCP23017 Pin #15"
     restore_mode: ALWAYS_OFF
     pin:
       mcp23xxx: mcp23017_hub
@@ -572,10 +542,8 @@ switch:
         output: true
       inverted: true
 
-
   - platform: restart
-    name: "Droplet Restart"
-
+    name: "${name} Restart"
 
 output:
 
@@ -584,15 +552,11 @@ output:
     pin: GPIO23
     id: rtttl_out
 
-
-
-
-
 binary_sensor:
 
   # BUTTON SHORT and LONG PRES AVALIABLE IN HOME ASSISTANT #  https://esphome.io/components/binary_sensor/index.html?highlight=binary_sensor
   - platform: gpio
-    name: "Droplet_Button_Short_Press"
+    name: "${name} Button Short Press"
     pin:
       number: 36
       # Short press activates OLED for 20s
@@ -604,8 +568,6 @@ binary_sensor:
 
   - platform: gpio
     pin: 36
-    name: "Droplet_Button_Long_Press"
+    name: "${name} Button Long Press"
     filters:
       - delayed_on: 1s
-
-
