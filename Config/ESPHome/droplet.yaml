@@ -326,6 +326,12 @@ sensor:
     name: "${name} WiFi Signal Sensor"
     id: "dbm"
     update_interval: 5s
+  
+  # Uptime sensor #
+  - platform: uptime
+    name: "${name} Uptime"
+    update_interval: 3600s
+    
 
 switch:
 
@@ -571,3 +577,7 @@ binary_sensor:
     name: "${name} Button Long Press"
     filters:
       - delayed_on: 1s
+
+  # Status (connection) sensor#
+  - platform: status
+    name: "${name} Status"
