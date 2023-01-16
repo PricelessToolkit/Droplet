@@ -104,3 +104,4 @@ First, you need to create in the ESPhome new device using the Droplet Config fil
 * Capacitive Soil Moisture Sensor - https://s.click.aliexpress.com/e/_9Qz84W
 * Cables with connectors for sensors and relays "pin pitch XH 2.54MM" - https://s.click.aliexpress.com/e/_DDpn7iB
 * 3D Case "For those who live in France" you can order here - https://www.facebook.com/Upin3d
+* Cable for soil moisture sensor https://s.click.aliexpress.com/e/_DDGNx5h
