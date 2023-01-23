@@ -309,17 +309,17 @@ sensor:
     address: 0x76
     update_interval: 5s
 
-   # TMP SENSOR "18b20" Change Adress foy your sensor #  Integrated Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
-  - platform: dallas
-    address: 0xcd062180e9a6f228
-    name: "${name} Integrated TMP"
-    id: "intergratedtmp"
+  # TMP SENSOR "18b20" Change Adress foy your sensor #  Integrated Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
+  #- platform: dallas
+  #  address: 0xcd062180e9a6f228
+  #  name: "${name} Integrated TMP"
+  #  id: "intergratedtmp"
 
-   # TMP SENSOR "18b20" Change Adress foy your sensor #  Integrated Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
-  - platform: dallas
-    address: 0x30062180EFF26828
-    name: "${name} External TMP"
-    id: "externaltmp"
+  # TMP SENSOR "18b20" Change Adress foy your sensor #  Integrated Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
+  #- platform: dallas
+  #  address: 0x30062180EFF26828
+  #  name: "${name} External TMP"
+  #  id: "externaltmp"
     
   # WIFI #
   - platform: wifi_signal
