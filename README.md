@@ -114,7 +114,8 @@ sensor:
     address: 0xA40000031F055028
     name: "Droplet Onboard TMP Sensor"
 ```
-
+after adding it to the config you need to "install" the new firmware one more time.
+ 
 
 ## Part List
 
