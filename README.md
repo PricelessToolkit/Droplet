@@ -89,8 +89,37 @@ First, you need to create in the ESPhome new device using the Droplet Config fil
 
 
 
+## Setting the onboard DS18b20 temperature sensor
 
-  
+First of all we need to find out the address of the Onboard temperature sensor.
+For example with this configuration:
+
+```
+dallas:  # Integrated Temperature Sensor. https://esphome.io/components/sensor/dallas.html
+  - pin: 25
+    update_interval: 5s
+```
+
+In the log output (the log level must be set to at least debug!) you will find something like this
+
+
+<img src="https://esphome.io/_images/dallas-log.png" width="634" height="321" />
+
+
+Now that we know the address of our sensor, we need to add it to the config as an example shown below
+
+```
+dallas:  # Integrated Temperature Sensor. https://esphome.io/components/sensor/dallas.html
+  - pin: GPIO23
+    update_interval: 5s
+
+sensor:
+  - platform: dallas
+    address: 0xA40000031F055028
+    name: "Droplet Onboard TMP Sensor"
+```
+
+
 ## Part List
 
 !!! Deleted the old link to the pumps since I ordered 30 pieces of which 10 were for air !!!
