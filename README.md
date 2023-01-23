@@ -106,7 +106,7 @@ In the log output (the log level must be set to at least debug!) you will find s
 <img src="https://esphome.io/_images/dallas-log.png" width="634" height="321" />
 
 
-Now that we know the address of temperature sensor, we need to add it to the config as an example shown below
+Now that we know the address of temperature sensor, we can add it to the config as an example shown below
 
 ```
 sensor:
