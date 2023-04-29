@@ -18,11 +18,9 @@ ota:
   password: "bfec11234xsfea57e1b5d3b985cfe06c"
 
 wifi:
-  ssid: "Your_WIFI_SSID"
-  password: "Your_WIFI_Password"
-  #power_save_mode: none
-  #domain: .lab.lan
-  fast_connect: on
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  fast_connect: true
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
