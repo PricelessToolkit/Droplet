@@ -3,6 +3,7 @@ substitutions:
 
 esphome:
   name: ${name}
+  name_add_mac_suffix: true
   platform: ESP32
   board: esp32dev
   on_boot:
