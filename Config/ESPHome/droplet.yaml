@@ -4,12 +4,22 @@ substitutions:
 esphome:
   name: ${name}
   name_add_mac_suffix: true
+  project:
+    name: pricelesstoolkit.droplet
+    version: "1.0"
+    
   platform: ESP32
   board: esp32dev
   on_boot:
     priority: -100
     then:
       - lambda: id(oled).turn_off();
+
+
+dashboard_import:
+  package_import_url: github://PricelessToolkit/Droplet/Config/ESPHome/droplet.yaml@main
+  import_full_config: true
+
 
 # Enable logging
 logger:
