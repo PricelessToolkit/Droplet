@@ -125,7 +125,6 @@ after adding it to the config "install" the new firmware one more time.
 * Oled Display - https://s.click.aliexpress.com/e/_DlkmoXv
 * Pump 1 - https://s.click.aliexpress.com/e/_DdjCmgL
 * Pump 2 - https://s.click.aliexpress.com/e/_DF3tloX
-* Pump 3 - https://s.click.aliexpress.com/e/_DBVuvon
 * Silicone tube " inner diameters 3 and 4mm" - https://s.click.aliexpress.com/e/_DBnM9qL
 * Heat Set Insert M3 X D4.6 X L4.5 - https://s.click.aliexpress.com/e/_9xbSZC
 * Capacitive Soil Moisture Sensor - https://s.click.aliexpress.com/e/_9Qz84W
