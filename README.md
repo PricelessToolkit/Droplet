@@ -1,3 +1,9 @@
+🤗 Please consider subscribing to my [YouTube channel](https://www.youtube.com/@PricelessToolkit/videos)
+Your subscription goes a long way in backing my work.
+
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U2QLAF8)
+
 # Droplet
  ALL-IN-ONE Irrigation and monitoring system for ESPHome and Home Assistant.
  * Youtube How-To https://youtu.be/mCXTqONmpZk
