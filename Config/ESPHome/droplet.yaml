@@ -1,5 +1,5 @@
 substitutions:
-  name: Droplet
+  name: droplet
 
 esphome:
   name: ${name}
@@ -73,7 +73,6 @@ display: # More info https://esphome.io/components/display/ssd1306.html?highligh
       it.printf(61, 0, id(font2) ,"%.1f", id(dbm).state);
       it.line(0, 12, 98, 12);
       it.line(98, 0, 98, 64);
-      it.printf(5, 15, id(font3) ,"%.1f°C", id(intergratedtmp).state);
       it.printf(5, 30, id(font3) ,"%.1fH", id(dhthumidity).state);
       it.printf(5, 45, id(font3) ,"%.1fP", id(pressure).state);
       it.printf(102, 0, id(font2) ,"%.1f", id(Soil1).state);
@@ -318,11 +317,11 @@ sensor:
     address: 0x76
     update_interval: 5s
 
-  # TMP SENSOR "18b20" Change Adress foy your sensor #  Integrated Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
-  #- platform: dallas
-  #  address: 0xcd062180e9a6f228
-  #  name: "${name} Integrated TMP"
-  #  id: "intergratedtmp"
+ # TMP SENSOR "18b20" Change Adress foy your sensor #  Integrated Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
+ # - platform: dallas
+ #   address: 0xcd062180e9a6f228
+ #   name: "${name} Integrated TMP"
+ #   id: "intergratedtmp"
 
   # TMP SENSOR "18b20" Change Adress foy your sensor #  External Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
   #- platform: dallas
@@ -571,21 +570,22 @@ binary_sensor:
 
   # BUTTON SHORT and LONG PRES AVALIABLE IN HOME ASSISTANT #  https://esphome.io/components/binary_sensor/index.html?highlight=binary_sensor
   - platform: gpio
-    name: "${name} Button Short Press"
+    name: "${name} Button"
     pin:
       number: 36
       # Short press activates OLED for 20s
-    on_press:
+    on_click:
+    - min_length: 10ms
+      max_length: 350ms
       then:
       - lambda: id(oled).turn_on();
       - delay: 20s
       - lambda: id(oled).turn_off();
-
-  - platform: gpio
-    pin: 36
-    name: "${name} Button Long Press"
-    filters:
-      - delayed_on: 1s
+      # Long press Do whatever you want
+    - min_length: 500ms
+      max_length: 1500ms
+      then:
+#        - switch.turn_on: relay_1
 
   # Status (connection) sensor#
   - platform: status
