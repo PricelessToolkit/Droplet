@@ -129,7 +129,7 @@ after adding it to the config "install" the new firmware one more time.
 
 * Power adapter 5v 2-3.5Ah Connector DC-005 2.0 - https://s.click.aliexpress.com/e/_DEsuOdV
 * Oled Display - https://s.click.aliexpress.com/e/_DlkmoXv
-* Water Pump - [https://s.click.aliexpress.com/e/_DdjCmgL](https://s.click.aliexpress.com/e/_Dddqvul) Datashet - https://github.com/PricelessToolkit/Droplet/blob/main/Water_Pump_JSB1523008.pdf
+* Water Pump "Model B JSB1523" 5V - [https://s.click.aliexpress.com/e/_DdjCmgL](https://s.click.aliexpress.com/e/_Dddqvul) Datashet - https://github.com/PricelessToolkit/Droplet/blob/main/Water_Pump_JSB1523008.pdf
 * Silicone tube " inner diameters 3 and 4mm" - https://s.click.aliexpress.com/e/_DBnM9qL
 * Heat Set Insert M3 X D4.6 X L4.5 - https://s.click.aliexpress.com/e/_9xbSZC
 * Capacitive Soil Moisture Sensor "lottery may be working or defective" - https://s.click.aliexpress.com/e/_9Qz84W
