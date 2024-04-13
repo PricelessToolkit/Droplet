@@ -129,11 +129,10 @@ after adding it to the config "install" the new firmware one more time.
 
 * Power adapter 5v 2-3.5Ah Connector DC-005 2.0 - https://s.click.aliexpress.com/e/_DEsuOdV
 * Oled Display - https://s.click.aliexpress.com/e/_DlkmoXv
-* Pump 1 - https://s.click.aliexpress.com/e/_DdjCmgL
-* Pump 2 - https://s.click.aliexpress.com/e/_DF3tloX
+* Pump 1 - [https://s.click.aliexpress.com/e/_DdjCmgL](https://s.click.aliexpress.com/e/_Dddqvul)
 * Silicone tube " inner diameters 3 and 4mm" - https://s.click.aliexpress.com/e/_DBnM9qL
 * Heat Set Insert M3 X D4.6 X L4.5 - https://s.click.aliexpress.com/e/_9xbSZC
-* Capacitive Soil Moisture Sensor - https://s.click.aliexpress.com/e/_9Qz84W
+* Capacitive Soil Moisture Sensor "lottery may be working or defective" - https://s.click.aliexpress.com/e/_9Qz84W
 * Cables with connectors for sensors and relays "pin pitch XH 2.54MM" - https://s.click.aliexpress.com/e/_DDpn7iB
 * 3D Case "For those who live in France" you can order here - https://www.facebook.com/Upin3d
 * Cable for soil moisture sensor https://s.click.aliexpress.com/e/_DDGNx5h
