@@ -308,7 +308,7 @@ sensor:
     long_range: true
 
   # BMP280 TMP and HUMIDITY SENSOR #  https://esphome.io/components/sensor/bmp280.html?highlight=bmp280   Delet if not used
-  - platform: bmp280
+  - platform: bmp280_i2c
     temperature:
       name: "${name} bmp280 Temperature"
       oversampling: 16x
