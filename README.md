@@ -104,26 +104,56 @@ First of all we need to find out the address of the Onboard temperature sensor.
 For example with this configuration: "which is already in the default config"
 
 ```
-dallas:  # Integrated Temperature Sensor. https://esphome.io/components/sensor/dallas.html
-  - pin: 25
-    update_interval: 5s
+one_wire: #https://esphome.io/components/one_wire
+  - platform: gpio
+    pin: GPIO25
 ```
 
-In the log output (the log level must be set to at least debug!) you will find something like this
+In the log output (ensure the log level is set to at least debug), you’ll see something like this.
 
 
 <img src="https://esphome.io/_images/dallas-log.png" width="634" height="321" />
 
 
-Now that we know the address of temperature sensor, we can add it to the config as an example shown below
+With the temperature sensor address identified in the log, we can now enable the Display component by adding this line.
+
+```yaml
+it.printf(5, 15, id(font3) ,"%.1f°C", id(intergratedtmp).state);
+```
+
+It should look like this in the full configuration.
+
+```yaml
+display: # More info https://esphome.io/components/display/ssd1306.html?highlight=1306         
+  - platform: ssd1306_i2c
+    id: oled
+    model: "SSD1306 128x64"
+    address: 0x3C # Oled Display Address
+    lambda: |-
+      it.printf(2, 0, id(font2), TextAlign::TOP_LEFT, "DROPLET");
+      it.printf(61, 0, id(font2) ,"%.1f", id(dbm).state);
+      it.line(0, 12, 98, 12);
+      it.line(98, 0, 98, 64);
+      it.printf(5, 15, id(font3) ,"%.1f°C", id(intergratedtmp).state);
+      it.printf(5, 30, id(font3) ,"%.1fH", id(dhthumidity).state);
+      it.printf(5, 45, id(font3) ,"%.1fP", id(pressure).state);
+      it.printf(102, 0, id(font2) ,"%.1f", id(Soil1).state);
+      it.printf(102, 12, id(font2) ,"%.1f", id(Soil2).state);
+      it.printf(102, 24, id(font2) ,"%.1f", id(Soil3).state);
+      it.printf(102, 36, id(font2) ,"%.1f", id(Soil4).state);
+      it.printf(102, 48, id(font2) ,"%.1f", id(Soil5).state);
 
 ```
-sensor:
-  - platform: dallas
-    address: 0xA40000031F055028
-    name: "Droplet Onboard TMP Sensor"
+
+Now, uncomment the integrated temperature sensor configuration and add the address.
+
 ```
-after adding it to the config "install" the new firmware one more time.
+  - platform: dallas_temp
+    address: 0x6e3c......
+    name: "${name} Integrated TMP"
+    id: "intergratedtmp"
+```
+After adding it to the configuration, reinstall the firmware once more.
  
 
 ## Part List
