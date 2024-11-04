@@ -65,23 +65,23 @@ font: # Fonts for Display
     size: 14
 
 display: # More info https://esphome.io/components/display/ssd1306.html?highlight=1306         
-  - platform: ssd1306_i2c
-    id: oled
-    model: "SSD1306 128x64"
-    address: 0x3C # Oled Display Address
-    lambda: |-
-      it.printf(2, 0, id(font2), TextAlign::TOP_LEFT, "DROPLET");
-      it.printf(61, 0, id(font2) ,"%.1f", id(dbm).state);
-      it.line(0, 12, 98, 12);
-      it.line(98, 0, 98, 64);
-      it.printf(5, 30, id(font3) ,"%.1fH", id(dhthumidity).state);
-      it.printf(5, 45, id(font3) ,"%.1fP", id(pressure).state);
-      it.printf(102, 0, id(font2) ,"%.1f", id(Soil1).state);
-      it.printf(102, 12, id(font2) ,"%.1f", id(Soil2).state);
-      it.printf(102, 24, id(font2) ,"%.1f", id(Soil3).state);
-      it.printf(102, 36, id(font2) ,"%.1f", id(Soil4).state);
-      it.printf(102, 48, id(font2) ,"%.1f", id(Soil5).state);
-#     it.printf(5, 15, id(font3) ,"%.1f°C", id(intergratedtmp).state);
+- platform: ssd1306_i2c
+  id: oled
+  model: SSD1306 128x64
+  address: 0x3C   # Oled Display Address
+  lambda: |-
+    it.printf(2, 0, id(font2), TextAlign::TOP_LEFT, "DROPLET");
+    it.printf(61, 0, id(font2) ,"%.1f", id(dbm).state);
+    it.line(0, 12, 98, 12);
+    it.line(98, 0, 98, 64);
+    it.printf(102, 0, id(font2) ,"%.1f", id(Soil1).state);
+    it.printf(102, 12, id(font2) ,"%.1f", id(Soil2).state);
+    it.printf(102, 24, id(font2) ,"%.1f", id(Soil3).state);
+    it.printf(102, 36, id(font2) ,"%.1f", id(Soil4).state);
+    it.printf(102, 48, id(font2) ,"%.1f", id(Soil5).state);
+#   it.printf(5, 15, id(font3) ,"%.1f°C", id(intergratedtmp).state);
+#   it.printf(5, 30, id(font3) ,"%.1fH", id(dhthumidity).state);
+#   it.printf(5, 45, id(font3) ,"%.1fP", id(pressure).state);
 
 
   # Integrated BUZZER # If you using pin23 for something else, delete this and remove jumper 1
