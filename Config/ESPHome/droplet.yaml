@@ -290,40 +290,40 @@ sensor:
     return {};
 
   # DHT TMP and HUMIDITY SENSOR  #  https://esphome.io/components/sensor/dht.html    Delet if not used
-- platform: dht
-  pin: 5
-  temperature:
-    name: "${name} DHT Temperature"
-    id: "dhttemperature"
-  humidity:
-    name: "${name} DHT Humidity"
-    id: "dhthumidity"
-  update_interval: 5s
+#- platform: dht
+#  pin: 5
+#  temperature:
+#    name: "${name} DHT Temperature"
+#    id: "dhttemperature"
+#  humidity:
+#    name: "${name} DHT Humidity"
+#    id: "dhthumidity"
+#  update_interval: 5s
 
   # DISTANCE SENSOR #     # You can measure the height of the plant and plot the growth reight #  https://esphome.io/components/sensor/vl53l0x.html?highlight=vl53l0  Delet if not used
-- platform: vl53l0x
-  name: "${name} VL53L0x Distance"
-  id: "distance"
-  address: 0x29
-  update_interval: 2s
-  long_range: true
+#- platform: vl53l0x
+#  name: "${name} VL53L0x Distance"
+#  id: "distance"
+#  address: 0x29
+#  update_interval: 2s
+#  long_range: true
 
   # BMP280 TMP and HUMIDITY SENSOR #  https://esphome.io/components/sensor/bmp280.html?highlight=bmp280   Delet if not used
-- platform: bmp280_i2c
-  temperature:
-    name: "${name} bmp280 Temperature"
-    oversampling: 16x
-  pressure:
-    name: "${name} bmp280 Pressure"
-    id: "pressure"
-  address: 0x76
-  update_interval: 5s
+#- platform: bmp280_i2c
+#  temperature:
+#    name: "${name} bmp280 Temperature"
+#    oversampling: 16x
+#  pressure:
+#    name: "${name} bmp280 Pressure"
+#    id: "pressure"
+#  address: 0x76
+#  update_interval: 5s
 
 # https://esphome.io/components/sensor/dallas_temp.html
-- platform: dallas_temp  
-  address: 0xcd062180e9a6f228
-  name: "${name} Integrated TMP"
-  id: "intergratedtmp"
+#- platform: dallas_temp  
+#  address: 0x6e3c......
+#  name: "${name} Integrated TMP"
+#  id: "intergratedtmp"
 
 
   # WIFI #
