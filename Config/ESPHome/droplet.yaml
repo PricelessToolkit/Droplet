@@ -81,7 +81,7 @@ display: # More info https://esphome.io/components/display/ssd1306.html?highligh
       it.printf(102, 24, id(font2) ,"%.1f", id(Soil3).state);
       it.printf(102, 36, id(font2) ,"%.1f", id(Soil4).state);
       it.printf(102, 48, id(font2) ,"%.1f", id(Soil5).state);
-
+#     it.printf(5, 15, id(font3) ,"%.1f°C", id(intergratedtmp).state);
 
 
   # Integrated BUZZER # If you using pin23 for something else, delete this and remove jumper 1
@@ -289,46 +289,42 @@ sensor:
       return {};
 
   # DHT TMP and HUMIDITY SENSOR  #  https://esphome.io/components/sensor/dht.html    Delet if not used
-  - platform: dht
-    pin: 5
-    temperature:
-      name: "${name} DHT Temperature"
-      id: "dhttemperature"
-    humidity:
-      name: "${name} DHT Humidity"
-      id: "dhthumidity"
-    update_interval: 5s
+#  - platform: dht
+#    pin: 5
+#    temperature:
+#      name: "${name} DHT Temperature"
+#      id: "dhttemperature"
+#    humidity:
+#      name: "${name} DHT Humidity"
+#      id: "dhthumidity"
+#    update_interval: 5s
 
   # DISTANCE SENSOR #     # You can measure the height of the plant and plot the growth reight #  https://esphome.io/components/sensor/vl53l0x.html?highlight=vl53l0  Delet if not used
-  - platform: vl53l0x
-    name: "${name} VL53L0x Distance"
-    id: "distance"
-    address: 0x29
-    update_interval: 2s
-    long_range: true
+#  - platform: vl53l0x
+#    name: "${name} VL53L0x Distance"
+#    id: "distance"
+#    address: 0x29
+#    update_interval: 2s
+#    long_range: true
 
   # BMP280 TMP and HUMIDITY SENSOR #  https://esphome.io/components/sensor/bmp280.html?highlight=bmp280   Delet if not used
-  - platform: bmp280_i2c
-    temperature:
-      name: "${name} bmp280 Temperature"
-      oversampling: 16x
-    pressure:
-      name: "${name} bmp280 Pressure"
-      id: "pressure"
-    address: 0x76
-    update_interval: 5s
+#  - platform: bmp280_i2c
+#    temperature:
+#      name: "${name} bmp280 Temperature"
+#      oversampling: 16x
+#    pressure:
+#      name: "${name} bmp280 Pressure"
+#      id: "pressure"
+#    address: 0x76
+#    update_interval: 5s
 
 # https://esphome.io/components/sensor/dallas_temp.html
   #- platform: dallas_temp  
-  #  address: 0xcd062180e9a6f228
+  #  address: 0x6e3c......
   #  name: "${name} Integrated TMP"
   #  id: "intergratedtmp"
 
-  # TMP SENSOR "18b20" Change Adress foy your sensor #  External Temperature Sensor. Comment this section, then search your sensor address in a log output https://esphome.io/components/sensor/dallas.html
-  #- platform: dallas
-  #  address: 0x30062180EFF26828
-  #  name: "${name} External TMP"
-  #  id: "externaltmp"
+
     
   # WIFI #
   - platform: wifi_signal
