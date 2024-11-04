@@ -115,7 +115,7 @@ In the log output (ensure the log level is set to at least debug), you’ll see 
 <img src="https://esphome.io/_images/dallas-log.png" width="634" height="321" />
 
 
-With the temperature sensor address identified in the log, we can now enable the Display component by adding this line.
+With the temperature sensor address identified in the log, we can now enable the Display component by uncomenting  this line.
 
 ```yaml
 it.printf(5, 15, id(font3) ,"%.1f°C", id(intergratedtmp).state);
@@ -134,7 +134,6 @@ display: # More info https://esphome.io/components/display/ssd1306.html?highligh
       it.printf(61, 0, id(font2) ,"%.1f", id(dbm).state);
       it.line(0, 12, 98, 12);
       it.line(98, 0, 98, 64);
-      it.printf(5, 15, id(font3) ,"%.1f°C", id(intergratedtmp).state);
       it.printf(5, 30, id(font3) ,"%.1fH", id(dhthumidity).state);
       it.printf(5, 45, id(font3) ,"%.1fP", id(pressure).state);
       it.printf(102, 0, id(font2) ,"%.1f", id(Soil1).state);
@@ -142,6 +141,7 @@ display: # More info https://esphome.io/components/display/ssd1306.html?highligh
       it.printf(102, 24, id(font2) ,"%.1f", id(Soil3).state);
       it.printf(102, 36, id(font2) ,"%.1f", id(Soil4).state);
       it.printf(102, 48, id(font2) ,"%.1f", id(Soil5).state);
+      it.printf(5, 15, id(font3) ,"%.1f°C", id(intergratedtmp).state);
 
 ```
 
