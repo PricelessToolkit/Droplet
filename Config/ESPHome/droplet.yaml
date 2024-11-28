@@ -114,7 +114,7 @@ sensor:
   icon: mdi:water-percent
   update_interval: 2s
   unit_of_measurement: '%'
-  attenuation: 11db
+  attenuation: 12db
   filters:
   - calibrate_linear:
     - 2.520 -> 0.00      # Calibrate Min in dry soil
@@ -132,7 +132,7 @@ sensor:
   icon: mdi:water-percent
   update_interval: 2s
   unit_of_measurement: '%'
-  attenuation: 11db
+  attenuation: 12db
   filters:
   - calibrate_linear:
     - 2.520 -> 0.00      # Calibrate Min in dry soil
@@ -150,7 +150,7 @@ sensor:
   icon: mdi:water-percent
   update_interval: 2s
   unit_of_measurement: '%'
-  attenuation: 11db
+  attenuation: 12db
   filters:
   - calibrate_linear:
     - 2.520 -> 0.00      # Calibrate Min in dry soil
@@ -168,7 +168,7 @@ sensor:
   icon: mdi:water-percent
   update_interval: 2s
   unit_of_measurement: '%'
-  attenuation: 11db
+  attenuation: 12db
   filters:
   - calibrate_linear:
     - 2.520 -> 0.00      # Calibrate Min in dry soil
@@ -186,7 +186,7 @@ sensor:
   icon: mdi:water-percent
   update_interval: 2s
   unit_of_measurement: '%'
-  attenuation: 11db
+  attenuation: 12db
   filters:
   - calibrate_linear:
     - 2.520 -> 0.00      # Calibrate Min in dry soil
