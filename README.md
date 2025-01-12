@@ -103,7 +103,7 @@ First, you need to create in the ESPhome new device using the Droplet Config fil
 First of all we need to find out the address of the Onboard temperature sensor.
 For example with this configuration: "which is already in the default config"
 
-```
+```yaml
 one_wire: #https://esphome.io/components/one_wire
   - platform: gpio
     pin: GPIO25
@@ -147,7 +147,7 @@ display: # More info https://esphome.io/components/display/ssd1306.html?highligh
 
 Now, uncomment the integrated temperature sensor configuration and add the address.
 
-```
+```yaml
   - platform: dallas_temp
     address: 0x6e3c......
     name: "${name} Integrated TMP"
