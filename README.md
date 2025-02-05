@@ -157,8 +157,9 @@ After adding it to the configuration, reinstall the firmware once more.
  
 
 ## Part List
-
-!!! Sellers very often change the type of pump to air "Link may not be relevant" !!!
+> [!NOTE]
+> !!! Sellers often change the type of pump, so the link may not be relevant. !!!
+> The correct pump connector pitch is 2.54 mm.
 
 * Power adapter 5v 2-3.5Ah Connector DC-005 2.0 - https://s.click.aliexpress.com/e/_DEsuOdV
 * Oled Display - https://s.click.aliexpress.com/e/_DlkmoXv
