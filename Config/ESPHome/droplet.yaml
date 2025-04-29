@@ -8,13 +8,13 @@ esphome:
     name: pricelesstoolkit.droplet
     version: "1.0"
     
-  platform: ESP32
-  board: esp32dev
   on_boot:
     priority: -100
     then:
       - lambda: id(oled).turn_off();
 
+esp32:
+  board: esp32dev
 
 dashboard_import:
   package_import_url: github://PricelessToolkit/Droplet/Config/ESPHome/droplet.yaml@main
