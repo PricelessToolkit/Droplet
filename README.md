@@ -167,7 +167,7 @@ After adding it to the configuration, reinstall the firmware once more.
 * Water Pump Datasheet - https://github.com/PricelessToolkit/Droplet/blob/main/Water_Pump_JSB1523008.pdf
 * Silicone tube "inner diameters 3 and 4mm" - https://s.click.aliexpress.com/e/_DBnM9qL
 * Heat Set Insert M3 X D4.6 X L4.5 - https://s.click.aliexpress.com/e/_9xbSZC
-* Capacitive Soil Moisture Sensor "lottery may be working or defective" - https://s.click.aliexpress.com/e/_9Qz84W
+* Capacitive Soil Moisture Sensor "lottery may be working or defective" - https://s.click.aliexpress.com/e/_oDhHhEv
 * Cables with connectors for sensors and relays "pin pitch XH 2.54MM" - https://s.click.aliexpress.com/e/_DDpn7iB
 * 3D Case "For those who live in France" you can order here - https://www.facebook.com/Upin3d
 * Cable for soil moisture sensor https://s.click.aliexpress.com/e/_DDGNx5h
