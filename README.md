@@ -163,7 +163,7 @@ After adding it to the configuration, reinstall the firmware once more.
 
 * Power adapter 5v 2-3.5Ah Connector DC-005 2.0 - https://s.click.aliexpress.com/e/_DEsuOdV
 * Oled Display - https://s.click.aliexpress.com/e/_DlkmoXv
-* Water Pump "Model B JSB1523" 5V "Connector pitch 2.54mm" - https://s.click.aliexpress.com/e/_ok8vbDj
+* Water Pump "Model B JSB1523" 5V "Connector pitch 2.54mm" - https://s.click.aliexpress.com/e/_ok8vbDj or any 5v 0.3A pump - https://fr.aliexpress.com/w/wholesale-water-pump-5v--jsb1523.html
 * Water Pump Datasheet - https://github.com/PricelessToolkit/Droplet/blob/main/Water_Pump_JSB1523008.pdf
 * Silicone tube "inner diameters 3 and 4mm" - https://s.click.aliexpress.com/e/_DBnM9qL
 * Heat Set Insert M3 X D4.6 X L4.5 - https://s.click.aliexpress.com/e/_9xbSZC
